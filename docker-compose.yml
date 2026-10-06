@@ -1,0 +1,65 @@
+# ===============================================================================
+# Docker Compose Configuration - University Student Services Assistant
+# ===============================================================================
+
+services:
+  # ---------------------------------------------------------------------------
+  # 1. FastAPI Backend API & Data Pipeline Service
+  # ---------------------------------------------------------------------------
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: university_assistant_app:latest
+    container_name: university_assistant_api
+    ports:
+      - "8000:8000"
+    environment:
+      - DATA_DIR=/app/data
+      - SQLITE_DB_PATH=/app/data/university.db
+      - CHROMADB_DIR=/app/data/chromadb
+      - EMBEDDING_MODEL_NAME=sentence-transformers/all-MiniLM-L6-v2
+      - CHROMA_COLLECTION_NAME=university_docs
+      - CHUNK_SIZE=600
+      - CHUNK_OVERLAP=100
+      - OLLAMA_BASE_URL=http://host.docker.internal:11434
+      - ADMIN_USERNAME=admin
+      - ADMIN_PASSWORD=admin123
+    env_file:
+      - .env
+    command: ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+    volumes:
+      - ./data:/app/data
+      - ./app:/app/app
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+
+  # ---------------------------------------------------------------------------
+  # 2. Streamlit Web Application Interface
+  # ---------------------------------------------------------------------------
+  ui:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: university_assistant_app:latest
+    container_name: university_assistant_ui
+    ports:
+      - "8501:8501"
+    environment:
+      - API_BASE_URL=http://api:8000
+    env_file:
+      - .env
+    volumes:
+      - ./data:/app/data
+      - ./ui:/app/ui
+      - ./app:/app/app
+    command: ["streamlit", "run", "ui/app.py", "--server.port=8501", "--server.address=0.0.0.0"]
+    depends_on:
+      - api
+    restart: unless-stopped

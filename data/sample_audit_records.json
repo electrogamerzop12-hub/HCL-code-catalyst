@@ -1,0 +1,61 @@
+[
+  {
+    "trace_id": "7f3c2a9e",
+    "timestamp": "2026-10-06T14:02:11Z",
+    "student_id": "S1001",
+    "question_category": "personal_eligibility",
+    "sources_retrieved": [
+      {
+        "doc_id": "ACAD-REG-2024",
+        "section": "7.2",
+        "score": 0.82
+      }
+    ],
+    "precedence_decision": "ACAD-REG-2024 active (Level 1 Authority)",
+    "tools_invoked": [
+      {
+        "tool": "get_attendance",
+        "status": "ok",
+        "ms": 4
+      },
+      {
+        "tool": "check_exam_eligibility",
+        "status": "ok",
+        "ms": 2
+      }
+    ],
+    "answer_type": "calculated",
+    "model": "llama3.1:8b",
+    "llm_calls": 1,
+    "tokens": 2140,
+    "latency_ms": 580
+  },
+  {
+    "trace_id": "8a72b10c",
+    "timestamp": "2026-10-06T14:05:30Z",
+    "student_id": "S1001",
+    "question_category": "security_unauthorized",
+    "sources_retrieved": [],
+    "precedence_decision": "Unauthorized cross-student query blocked",
+    "tools_invoked": [],
+    "answer_type": "refused",
+    "model": "none",
+    "llm_calls": 0,
+    "tokens": 0,
+    "latency_ms": 12
+  },
+  {
+    "trace_id": "9b12c44d",
+    "timestamp": "2026-10-06T14:10:00Z",
+    "student_id": None,
+    "question_category": "unanswerable",
+    "sources_retrieved": [],
+    "precedence_decision": "No matching sources found",
+    "tools_invoked": [],
+    "answer_type": "not_found",
+    "model": "none",
+    "llm_calls": 0,
+    "tokens": 0,
+    "latency_ms": 15
+  }
+]

@@ -1,0 +1,122 @@
+{
+  "students": [
+    {
+      "student_id": "S1001",
+      "full_name": "Aarav Sharma",
+      "programme": "B.Tech CSE",
+      "batch_year": 2023,
+      "current_semester": 4,
+      "cgpa": 8.42,
+      "active_backlogs": 0
+    },
+    {
+      "student_id": "S1002",
+      "full_name": "Ananya Patel",
+      "programme": "B.Tech CSE",
+      "batch_year": 2023,
+      "current_semester": 4,
+      "cgpa": 7.15,
+      "active_backlogs": 1
+    },
+    {
+      "student_id": "S1003",
+      "full_name": "Rohan Gupta",
+      "programme": "B.Tech ECE",
+      "batch_year": 2022,
+      "current_semester": 6,
+      "cgpa": 6.85,
+      "active_backlogs": 0
+    },
+    {
+      "student_id": "S1004",
+      "full_name": "Priya Nair",
+      "programme": "B.Tech CSE",
+      "batch_year": 2023,
+      "current_semester": 4,
+      "cgpa": 9.10,
+      "active_backlogs": 0
+    },
+    {
+      "student_id": "S1005",
+      "full_name": "Vikram Singh",
+      "programme": "B.Tech ECE",
+      "batch_year": 2022,
+      "current_semester": 6,
+      "cgpa": 5.90,
+      "active_backlogs": 2
+    }
+  ],
+  "courses": [
+    {
+      "course_code": "CS201",
+      "course_name": "Data Structures & Algorithms",
+      "programme": "B.Tech CSE",
+      "semester": 4,
+      "credits": 4
+    },
+    {
+      "course_code": "CS202",
+      "course_name": "Database Management Systems",
+      "programme": "B.Tech CSE",
+      "semester": 4,
+      "credits": 4
+    },
+    {
+      "course_code": "EC301",
+      "course_name": "Digital Signal Processing",
+      "programme": "B.Tech ECE",
+      "semester": 6,
+      "credits": 4
+    }
+  ],
+  "attendance": [
+    {
+      "student_id": "S1001",
+      "course_code": "CS201",
+      "classes_held": 40,
+      "classes_attended": 35
+    },
+    {
+      "student_id": "S1001",
+      "course_code": "CS202",
+      "classes_held": 40,
+      "classes_attended": 38
+    },
+    {
+      "student_id": "S1002",
+      "course_code": "CS201",
+      "classes_held": 40,
+      "classes_attended": 28
+    },
+    {
+      "student_id": "S1003",
+      "course_code": "EC301",
+      "classes_held": 42,
+      "classes_attended": 36
+    }
+  ],
+  "results": [
+    {
+      "student_id": "S1001",
+      "course_code": "CS201",
+      "exam_session": "2026-MAY",
+      "exam_type": "REGULAR",
+      "internal_marks": 28,
+      "external_marks": 56,
+      "total_marks": 84,
+      "max_marks": 100,
+      "result": "PASS"
+    },
+    {
+      "student_id": "S1002",
+      "course_code": "CS201",
+      "exam_session": "2026-MAY",
+      "exam_type": "REGULAR",
+      "internal_marks": 15,
+      "external_marks": 24,
+      "total_marks": 39,
+      "max_marks": 100,
+      "result": "FAIL"
+    }
+  ]
+}
