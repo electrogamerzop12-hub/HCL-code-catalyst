@@ -257,4 +257,4 @@ python scripts/validate_students.py
 ## 📄 License & Attribution
 
 Built for the **HCLTech Future Ready AI Engineer Hackathon**.  
-Designed & Implemented by **Electrogamerzop12**.
+Designed & Implemented by **Code Catalyst**.
